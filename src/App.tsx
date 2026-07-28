@@ -9,6 +9,7 @@ import {
   FolderSimple,
   Gear,
   GitBranch,
+  GithubLogo,
   LinkedinLogo,
   List,
   MagnifyingGlass,
@@ -18,7 +19,6 @@ import {
   SlidersHorizontal,
   SquaresFour,
   Sun,
-  TerminalWindow,
   TreeStructure,
   X,
 } from "@phosphor-icons/react";
@@ -303,12 +303,24 @@ export function App() {
             <SquaresFour size={21} />
           </button>
           <span className="rail-spacer" />
-          <button type="button" className="rail-button" aria-label="Terminal">
-            <TerminalWindow size={22} />
-          </button>
-          <button type="button" className="rail-button" aria-label="Version control">
-            <GitBranch size={21} />
-          </button>
+          <a
+            className="rail-button"
+            href="https://www.linkedin.com/in/jiaolong423/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Long Jiao on LinkedIn"
+          >
+            <LinkedinLogo size={21} weight="fill" />
+          </a>
+          <a
+            className="rail-button"
+            href="https://github.com/johnwan"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Long Jiao on GitHub"
+          >
+            <GithubLogo size={21} weight="fill" />
+          </a>
         </nav>
         <div
           className={`mobile-project-backdrop ${
@@ -375,7 +387,7 @@ export function App() {
           <GitBranch size={13} weight="bold" aria-hidden="true" />
           local-preview
         </span>
-        <span>Syosset, NY</span>
+        <span>New York, NY</span>
         <span className="status-spacer" />
         <span>{themeName}</span>
         <a

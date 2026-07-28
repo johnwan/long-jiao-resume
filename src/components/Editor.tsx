@@ -63,7 +63,7 @@ function KotlinDocument({ id }: { id: ResumeRoute }) {
         </CodeLine>
         <CodeLine number={line++}>
           {"    "}
-          {keyword("val")} {property("location")} = {string("Syosset, NY")}
+          {keyword("val")} {property("location")} = {string("New York, NY")}
         </CodeLine>
         <CodeLine number={line++}>
           {"    "}

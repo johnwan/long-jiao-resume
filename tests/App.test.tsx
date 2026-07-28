@@ -23,6 +23,7 @@ describe("Android Studio résumé experience", () => {
     );
     expect(screen.getByText("Profile running")).toBeInTheDocument();
     expect(screen.getByText("@Profile")).toBeInTheDocument();
+    expect(screen.getAllByText(/New York, NY/)).toHaveLength(2);
   });
 
   it("switches files and returns to the off state after the last tab closes", () => {
@@ -104,5 +105,16 @@ describe("Android Studio résumé experience", () => {
     expect(fallbackImage).toBeInTheDocument();
     fireEvent.error(fallbackImage!);
     expect(fallbackImage).toHaveAttribute("hidden");
+  });
+
+  it("links the lower-left tool rail to LinkedIn and GitHub", () => {
+    render(<App />);
+
+    expect(
+      screen.getAllByRole("link", { name: "Long Jiao on LinkedIn" })[0],
+    ).toHaveAttribute("href", "https://www.linkedin.com/in/jiaolong423/");
+    expect(
+      screen.getByRole("link", { name: "Long Jiao on GitHub" }),
+    ).toHaveAttribute("href", "https://github.com/johnwan");
   });
 });
